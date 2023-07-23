@@ -28,6 +28,7 @@ Route::prefix('v1')->group(function (){
 
    Route::prefix('admin')->middleware(['auth:sanctum' , 'role:admin'])->group(function () {
       Route::post('store/travel' , [\App\Http\Controllers\Api\V1\Admin\TravelController::class , 'store']);
+      Route::post('store/travel/{travel}/tour' , [\App\Http\Controllers\Api\V1\Admin\TourController::class , 'store']);
    });
 });
 
