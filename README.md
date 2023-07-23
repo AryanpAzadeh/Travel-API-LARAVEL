@@ -63,4 +63,4 @@
     <li>Feature tests are a <b>big big plus</b></li>
 </ul>
 
-
+<a href="https://laraveldaily.com/">Source : laraveldaily.com</a>
