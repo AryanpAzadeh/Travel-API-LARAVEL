@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TravelRequest;
 use App\Http\Resources\TravelResource;
 use App\Models\Travel;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class TravelController extends Controller
@@ -13,6 +14,13 @@ class TravelController extends Controller
     public function store(TravelRequest $request)
     {
         $travel = Travel::create($request->validated());
+        return new TravelResource($travel);
+    }
+
+    public function update(Travel $travel, TravelRequest $request)
+    {
+        $travel->update($request->validated());
+
         return new TravelResource($travel);
     }
 }

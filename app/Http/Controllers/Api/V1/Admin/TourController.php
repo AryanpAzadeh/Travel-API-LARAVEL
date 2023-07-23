@@ -16,4 +16,6 @@ class TourController extends Controller
         $tour = $travel->tours()->create($validate);
         return new TourResource($tour);
     }
+
+
 }
